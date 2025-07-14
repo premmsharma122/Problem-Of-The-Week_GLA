@@ -7,12 +7,13 @@ pivot, write an efficient algorithm to find the minimum element in the array.
 ### Approach 1 : (We can say short trick ) 
 Just Sort the array and return the first element thats our answer.
 Let analyize the Arrays.sort() :- It uses dual pivote QuickSort -> 
-```
-// Picks two pivots instead of one.
-// Splits array into three parts:
-// 1. Less than first pivot
-// 2. Between pivots
-// 3. Greater than second pivot
-// Recursively sorts each part.
-```
-
+Picks two pivots instead of one.
+Splits array into three parts:
+1. Less than first pivot
+2. Between pivots
+3. Greater than second pivot
+Recursively sorts each part.
+-> Time compl. : in **Best case & Avg case** -> O(n *log n)
+                 in **Worest case** -> O(N^2)
+### So whats the problem in this approach -> 1. In Questio  given O(logn) and this approach does not acheive  it.
+  
