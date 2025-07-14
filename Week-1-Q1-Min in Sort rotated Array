@@ -12,4 +12,5 @@ Let analyize the Arrays.sort() :- It uses dual pivote QuickSort -> ```java
                                                                           Less than first pivot
                                                                           Between pivots
                                                                           Greater than second pivot
-                                                                          Recursively sorts each part.```
+                                                                          Recursively sorts each part.
+```
