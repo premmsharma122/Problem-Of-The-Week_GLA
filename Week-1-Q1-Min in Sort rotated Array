@@ -15,5 +15,13 @@ Splits array into three parts:
 Recursively sorts each part.
 -> Time compl. : in **Best case & Avg case** -> O(n *log n)
                  in **Worest case** -> O(N^2)
-### So whats the problem in this approach -> 1. In Questio  given O(logn) and this approach does not acheive  it.
+### So whats the problem in this approach -> . In Question  given O(logn) and this approach does not acheive  it. Lets eg : Suppose n = 1000 then log*n = 10 approx. and other hand
+###  n *log n = 10,000 approx so here is a huge differnce b/w them.
+### code->
+```java
+public static int rotate(int arr[]){
+  Arrays.sort(arr);
+  return arr[0];
+}
+```
   
