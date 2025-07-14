@@ -53,3 +53,26 @@ public int rotate(int[] nums, int low, int high) {
 }
 
 ```
+### Time Compl -> This is similar to binary search O(log N), Total recursive calls ≈ log₂ N, because In each step: high - low → halves.
+## Approach 4 : Iterative with Early Check for Sorted
+In this we maintain a low and high value and check index of low and high if at any point arr[low] < arr[high] retrun it. If not then maintain mid point.
+```java
+public int rotate(int[] nums) {
+    int low = 0, high = nums.length - 1;
+
+    while (low < high) {
+        if (nums[low] < nums[high]) return nums[low]; // already sorted
+
+        int mid = low + (high - low) / 2;
+
+        if (nums[mid] >= nums[low]) {
+            low = mid + 1;
+        } else {
+            high = mid;
+        }
+    }
+    return nums[low];
+}
+
+```
+### Time Compl -> In this approach every time we check it is less or not if it is less than high element return it and break, so this do not check unnessecary elements. so Time Compl : O (log N).
