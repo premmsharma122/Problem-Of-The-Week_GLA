@@ -7,7 +7,7 @@ pivot, write an efficient algorithm to find the minimum element in the array.
 ### Approach 1 : (We can say short trick ) 
 Just Sort the array and return the first element thats our answer.
 Let analyize the Arrays.sort() :- It uses dual pivote QuickSort -> 
-```java
+```
 // Picks two pivots instead of one.
 // Splits array into three parts:
 // 1. Less than first pivot
