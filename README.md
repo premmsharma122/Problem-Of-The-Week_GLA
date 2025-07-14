@@ -1,1 +1,4 @@
 # Problem-Of-The-Week_GLA
+### This repository is dedicated to enhancing my coding skills and consistency, which will help in our college placement drives. I am very grateful to our college administration for making all efforts and providing every possible opportunity to help us get placed and achieve better results.
+###  Our college has started POW (Problem Of The Week) — in this challenge, every week we are given 2-3 DSA problems to solve. The aim is to solve them using different approaches and write the most optimized code possible.
+### Goal: The goal is not just to solve the questions and submit them, but to dedicate 3-4 hours to coding, understanding the patterns, and learning the underlying algorithms. This practice will help transform random problem-solving into a more observational and strategic approach. In the future, this habit will help us solve problems more efficiently and confidently during placement drives, even under pressure.
