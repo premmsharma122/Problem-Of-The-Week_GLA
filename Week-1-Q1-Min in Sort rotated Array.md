@@ -24,4 +24,5 @@ public static int rotate(int arr[]){
   return arr[0];
 }
 ```
+### Approach 2 : 
   
