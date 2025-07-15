@@ -40,11 +40,11 @@ public static int subarraySum(int arr[]){
         return c;
         }
 ```
-## This code run in **O(N)** Time which is more better than N^2 
-## How this logic work -> Just Think we have to find a prefix sum that we early marked in our hashmap so if we have already a prefix sum so we add the their value in count
-##  In more simple word just  think we **Find "S" prefix sum** and we find **subarray sum of value "K"** and a **early prefix sum "P"** Then -> **S-P = K** that the heart to the Code
+### This code run in **O(N)** Time which is more better than N^2 
+ How this logic work -> Just Think we have to find a prefix sum that we early marked in our hashmap so if we have already a prefix sum so we add the their value in count
+ In more simple word just  think we **Find "S" prefix sum** and we find **subarray sum of value "K"** and a **early prefix sum "P"** Then -> **S-P = K** that the **heart of     the Code**.
 
-### Approach 3 : Ahhhh It is also Brute Force By 3 Loop which run in O(N^3) (worst approach )
+## Approach 3 : Ahhhh It is also Brute Force By 3 Loop which run in O(N^3) (worst approach )
 Just write code but we already submit its optimize version in **Approach 1** by Nested Loops
 
 ```java
