@@ -5,7 +5,8 @@ Your task is to paint all houses such that:
 • No two adjacent houses share the same color.
 • The total painting cost is minimized.
 
-## Observation -> ~This is a classic DP on a matrix problem.
+## Observation -> 
+                  ~This is a classic DP on a matrix problem.
                   ~It keeps track of the minimum cost so far while avoiding the same color as previous house.
 ###  Approach 1 : Brute Force By Recursion
 ```java
