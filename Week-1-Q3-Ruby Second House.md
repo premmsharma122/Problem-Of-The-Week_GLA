@@ -89,5 +89,5 @@ public int minCost(int[][] costs) {
         return min;
     }
 ```
-**Time Compl.** -> O(n*k*k) which is better than O(k^n) exponential time comple.
+**Time Compl.** -> O(n.k.k) which is better than O(k^n) exponential time comple.
 
