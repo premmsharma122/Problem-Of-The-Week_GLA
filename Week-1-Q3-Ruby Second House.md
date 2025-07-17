@@ -49,6 +49,7 @@ Color 2: 11
 👉 Best choice: Color 1 (cost = 2)
 just like that for House 1 and House 2 -> 👉 House 1: Color 2 (cost = 5) & 👉 House 2: Color 1 (cost = 3)
 As we know if select color 1 for house so we did not choose it for their adjacent houses. so we can say that 
+**we intilize first house cost without any check bcoz their is no previous house.**
 ```java
 dp[i][j] = costs[i][j] + min(cost to paint previous house with any color except j)
 ```
@@ -88,5 +89,5 @@ public int minCost(int[][] costs) {
         return min;
     }
 ```
-
+**Time Compl.** -> O(n*k*k) which is better than O(k^n) exponential time comple.
 
