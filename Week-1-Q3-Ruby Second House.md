@@ -41,3 +41,52 @@ public int minCost(int[][] costs) {
 ```
 In this recursion approach we use a helper function which is heart of code this function do recursive calls and check for evry combination with house colors with cost.
 Due to recusrive calls its **Time Comple** is O(k^n) **Because it tries all color combinations, it becomes exponential.**
+###  Approach 2 : Optimize Code By Dynamic Programming.
+In this after observation we know that -> Costs to paint House 0:
+Color 0: 14
+Color 1: 2
+Color 2: 11
+👉 Best choice: Color 1 (cost = 2)
+just like that for House 1 and House 2 -> 👉 House 1: Color 2 (cost = 5) & 👉 House 2: Color 1 (cost = 3)
+As we know if select color 1 for house so we did not choose it for their adjacent houses. so we can say that 
+```java
+dp[i][j] = costs[i][j] + min(cost to paint previous house with any color except j)
+```
+#  Code 
+```java
+public int minCost(int[][] costs) {
+        if (costs.length == 0) return 0;
+        int n = costs.length, k = costs[0].length;
+        int[][] dp = new int[n][k];
+        
+        // Base case: first house
+        for (int j = 0; j < k; j++) {
+            dp[0][j] = costs[0][j];
+        }
+        
+        // Build DP table
+        for (int i = 1; i < n; i++) {
+            for (int j = 0; j < k; j++) {
+                dp[i][j] = costs[i][j] + findMin(dp[i-1], j);
+            }
+        }
+        
+        // Final answer
+        int minCost = Integer.MAX_VALUE;
+        for (int cost : dp[n-1]) {
+            minCost = Math.min(minCost, cost);
+        }
+        return minCost;
+    }
+    
+    private int findMin(int[] prevCosts, int skipColor) {
+        int min = Integer.MAX_VALUE;
+        for (int i = 0; i < prevCosts.length; i++) {
+            if (i == skipColor) continue;
+            min = Math.min(min, prevCosts[i]);
+        }
+        return min;
+    }
+```
+
+
