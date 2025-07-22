@@ -43,3 +43,37 @@ class Solution {
 }
 ```
 ###  Time Comp -> O(2^n * m)
+##    Approach 2 : By Memoization (DP)
+In this approach we create a 3d matrix to store every possible result of three string's subsequnces and when we recursively check for each itration this 3d matrix's value **help us to calculate value w/o recursion call so it save time**. That why we use this memoization to reduces time complexity.
+```java
+public class Solution {
+    public int longestCommonSubsequence(String text1, String text2, String text3) {
+        int[][][] memo = new int[text1.length()][text2.length()][text3.length()];
+        
+        for (int[][] matrix : memo)
+            for (int[] row : matrix)
+                Arrays.fill(row, -1);
+        
+        return lcs(0, 0, 0, text1, text2, text3, memo);
+    }
+
+    private int lcs(int i, int j, int k, String t1, String t2, String t3, int[][][] memo) {
+        if (i == t1.length() || j == t2.length() || k == t3.length())
+            return 0;
+
+        if (memo[i][j][k] != -1)
+            return memo[i][j][k];
+
+        if (t1.charAt(i) == t2.charAt(j) && t2.charAt(j) == t3.charAt(k)) {
+            memo[i][j][k] = 1 + lcs(i + 1, j + 1, k + 1, t1, t2, t3, memo);
+        } else {
+            int skip1 = lcs(i + 1, j, k, t1, t2, t3, memo);
+            int skip2 = lcs(i, j + 1, k, t1, t2, t3, memo);
+            int skip3 = lcs(i, j, k + 1, t1, t2, t3, memo);
+            memo[i][j][k] = Math.max(skip1, Math.max(skip2, skip3));
+        }
+
+        return memo[i][j][k];
+    }
+```
+###    Time Complexity : O(n * m * p) 
