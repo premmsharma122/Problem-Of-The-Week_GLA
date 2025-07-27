@@ -36,5 +36,15 @@ class Solution {
 ###    Approach : We keep track of the smallest number (res) we cannot form yet. We iterate over each coin a[i] in the array:
 ###    ->    If a[i] > res, then we cannot form res using any subset — so res is our answer.
 ###    ->    Else, we update res += a[i], because we can now form all values up to res + a[i] - 1.
-
-
+```java
+public class Solution {
+        public int SmallestUnrepresentableSum(int arr[]) {
+            long res = 1; 
+            for (int coin : arr) {
+                if (coin > res) break;
+                res += coin;
+            }
+            return  res;
+    }
+```
+### Time Complexity : O(N)
