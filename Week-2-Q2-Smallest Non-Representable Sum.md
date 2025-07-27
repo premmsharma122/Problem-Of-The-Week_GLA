@@ -31,3 +31,10 @@ class Solution {
     }
 }
 ```
+### Time Complexity : O(N*M)
+##    Question Which given : Given a sorted array of positive integers (coin denominations), find the smallest positive integer that cannot be formed as a sum of any subset of the array.
+###    Approach : We keep track of the smallest number (res) we cannot form yet. We iterate over each coin a[i] in the array:
+###    ->    If a[i] > res, then we cannot form res using any subset — so res is our answer.
+###    ->    Else, we update res += a[i], because we can now form all values up to res + a[i] - 1.
+
+
