@@ -3,3 +3,31 @@
 ###  determine the smallest amount of money that cannot be formed using any subset of the given denominations.
 ###  This functionality is crucial for detecting missing denominations and optimizing wallet design. The challenge? You need to solve this efficiently – in linear time relative to the size
 ###  of the input array.
+##  Same Question at LeetCode : 416. Partition Equal Subset Sum
+###  Approach 1: In this question First we calculate the total sum of all elements in array , why? because after that we can check is the total sum is even or odd,
+###  If Even --> Proceed Next.
+###  If Odd --> Return False.
+### After that we intilize a varible target in this total/2; which we have to target. two divide into equal parts by half so have to check the target value we can achive or not.
+### After that we Intilize a boolean array dp whcih indicate that with every 'i' element we can achive subset or not .
+```java
+class Solution {
+    public boolean canPartition(int[] nums) {
+        int total =0;
+        for(int n : nums){
+            total+= n;
+        }
+        if(total %2 != 0) return false;
+
+        boolean dp[] = new boolean[total+1];
+        dp[0] = true;
+        int trg = total/2;
+        for(int num : nums){
+            for(int curr =trg; curr >=num; curr--){
+                dp[curr] = dp[curr] || dp[curr-num];
+                if(dp[trg]) return true;
+            }
+        }
+        return false;
+    }
+}
+```
