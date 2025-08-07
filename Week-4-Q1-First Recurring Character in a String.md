@@ -56,3 +56,4 @@ public static Character help(String s) {
     return null; 
 }
 ```
+###    Time Compl -> This approach solve this question in O(N) linear time compl which is better than N^2.
