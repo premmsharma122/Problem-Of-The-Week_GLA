@@ -39,4 +39,20 @@ public static Character help(String s){
 ```
 ### Time Compl -> This approach solve this question in O(N^2) Time bcoz of nested loop.
 ##  Approach 2 : By HashSet -
-### iterate through a for 
+###    iterate through a for loop and check if hashset contains that char if not then add to hashset if contains then immediatly return that char.
+###    after loop for a edge case return null if no duplicate element.
+```java
+public static Character help(String s) {
+    HashSet<Character> seen = new HashSet<>();
+
+    for (int i = 0; i < s.length(); i++) {
+        char ch = s.charAt(i);
+        if (seen.contains(ch)) {
+            return ch; 
+        }
+        seen.add(ch);
+    }
+
+    return null; 
+}
+```
