@@ -29,3 +29,23 @@ class Solution {
     }
 }
 ```
+##    Approach 2 : By hashset
+###  -    Create a hashset and add all elements of given array in them.
+###  -    then intilize a **c** varible as last approach with initile value 1 then check while hashset does not contains the c.
+###  -    if it is not contains the c then immediatly return c untill increment them.
+### code -
+```java
+ public static int firstMissingPositive(int[] nums) {
+        
+        Set<Integer> set = new HashSet<>();
+        for (int n : nums) {
+            set.add(n);
+        }
+        int c = 1;
+        while (true) {
+            if (!set.contains(c)) return c;
+            c++;
+        }
+    }
+```
+
