@@ -8,9 +8,9 @@ M = 5, N = 7
 Output:
 4
 Explanation:
-5 = 101
-6 = 110
-7 = 111
+-    5 = 101
+-    6 = 110
+-    7 = 111
 ----------------
 5 & 6 & 7 = 100 = 4
 ##  Approach 1 : By Brute Force Iteerate a for loop it int digit size.
