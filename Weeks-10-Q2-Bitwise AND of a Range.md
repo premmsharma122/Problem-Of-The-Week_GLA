@@ -32,3 +32,18 @@ class Solution {
     }
 }
 ```
+##    Approach 2 : By calculating from start we start from last and take *AND* from last with their neighbour.
+-    Itearte a while until left < right is not hit
+-    take **AND** with right *&* right -1 and initlize it to new  right
+  ##    Code -
+```
+class Solution {
+    public int rangeBitwiseAnd(int left, int right) {
+        while(left < right){
+            right = right & (right-1);
+        }
+        return right;
+    }
+}
+```
+**Time ComP** : O(log(right))
